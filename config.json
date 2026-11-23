@@ -1,0 +1,12 @@
+{
+  "brand": "Mundo Martinho",
+  "tagline": "Juntos abraçamos a tecnologia.",
+  "headline": "Transforme a sua ideia em um projecto digital.",
+  "whatsapp": "958515434",
+  "whatsappCountryCode": "244",
+  "email": "",
+  "location": "Angola",
+  "showPortfolio": true,
+  "showTestimonials": true,
+  "theme": { "accent": "#087cff", "accent2": "#00d4ff" }
+}
