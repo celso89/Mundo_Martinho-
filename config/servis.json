@@ -1,0 +1,8 @@
+[
+ {"id":"website","name":"Criação de Sites","icon":"◈","short":"Sites institucionais, lojas, portais e experiências web.","description":"Sites responsivos, modernos, acessíveis e preparados para crescer.","enabled":true},
+ {"id":"game","name":"Criação de Jogos","icon":"🎮","short":"Jogos 2D e 3D, protótipos e experiências interativas.","description":"Desenvolvimento de jogos e experiências para plataformas seleccionadas.","enabled":true},
+ {"id":"management","name":"Programas de Gestão","icon":"▦","short":"Sistemas de gestão, painéis, registos e relatórios.","description":"Ferramentas personalizadas para organizar processos e operações.","enabled":true},
+ {"id":"app","name":"Aplicações","icon":"▣","short":"Aplicações mobile, desktop e utilitários personalizados.","description":"Aplicações pensadas para resolver necessidades específicas.","enabled":true},
+ {"id":"bot","name":"Bots e Automação","icon":"⌘","short":"Bots para WhatsApp, Telegram e fluxos automatizados.","description":"Bots, integrações e automação de tarefas e atendimento.","enabled":true},
+ {"id":"other","name":"Outro Projecto Digital","icon":"✳","short":"Tem outra ideia? Conte-nos e vamos explorar juntos.","description":"Soluções digitais personalizadas de acordo com o pedido.","enabled":true}
+]
