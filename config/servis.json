@@ -2,7 +2,7 @@
   {
     "id": "sites",
     "title": "Websites & plataformas",
-    "image": "imagens/sites.jpg",
+    "image": "imagens/1.jpg",
     "short": "Experiências digitais que representam a sua marca.",
     "details": "Sites institucionais, lojas, portais, páginas de apresentação, sistemas web, interfaces responsivas e experiências digitais personalizadas.",
     "items": [
@@ -15,7 +15,7 @@
   {
     "id": "jogos",
     "title": "Jogos & experiências",
-    "image": "imagens/jogos.jpg",
+    "image": "imagens/2.jpg",
     "short": "Jogos 2D e 3D, protótipos e experiências interactivas.",
     "details": "Desenvolvimento de jogos, protótipos, experiências interactivas, sistemas de níveis, interfaces, personagens e mecânicas personalizadas.",
     "items": [
@@ -28,7 +28,7 @@
   {
     "id": "gestao",
     "title": "Programas de gestão",
-    "image": "imagens/gestao.jpg",
+    "image": "imagens/3.jpg",
     "short": "Ferramentas para organizar operações e informação.",
     "details": "Programas de gestão personalizados para lojas, oficinas, empresas e equipas, com fluxos de trabalho, relatórios e controlo de informação.",
     "items": [
@@ -41,7 +41,7 @@
   {
     "id": "apps",
     "title": "Aplicações",
-    "image": "imagens/aplicacoes.jpg",
+    "image": "imagens/4.jpg",
     "short": "Aplicações mobile e desktop desenhadas para necessidades reais.",
     "details": "Aplicações móveis, desktop ou soluções multiplataforma, com interfaces próprias e funcionalidades ajustadas ao projecto.",
     "items": [
@@ -54,7 +54,7 @@
   {
     "id": "bots",
     "title": "Bots & automação",
-    "image": "imagens/bots.jpg",
+    "image": "imagens/5.jpg",
     "short": "Bots, integrações e automatização de processos.",
     "details": "Bots para WhatsApp, Telegram e outras plataformas, automação de tarefas, respostas, fluxos e integração com sistemas.",
     "items": [
@@ -67,7 +67,7 @@
   {
     "id": "ai",
     "title": "Soluções inteligentes",
-    "image": "imagens/inteligencia.jpg",
+    "image": "imagens/6.jpg",
     "short": "Tecnologia inteligente e ferramentas assistivas.",
     "details": "Integração de funcionalidades inteligentes, assistentes, processamento de informação e automação com foco no contexto do negócio.",
     "items": [
