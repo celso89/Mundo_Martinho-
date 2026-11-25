@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Website Profissional / Landing Page",
+        "desc": "Desenvolvimento web focado em conversão. Design responsivo, otimização SEO (Google) e carregamento ultrarrápido.",
+        "category": "websites",
+        "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop",
+        "price": "A partir de 25.000 Kz",
+        "badge": "Websites"
+    },
+    {
+        "id": 2,
+        "name": "Automação de WhatsApp",
+        "desc": "Atendimento automático 24/7. Integração com catálogo, respostas inteligentes, agendamentos e disparo de mensagens.",
+        "category": "bots",
+        "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop",
+        "price": "Sob Consulta",
+        "badge": "Automação"
+    },
+    {
+        "id": 3,
+        "name": "Aplicação Móvel (Android/iOS)",
+        "desc": "Apps nativas e híbridas com UI/UX moderno. Ideal para e-commerce, serviços de entrega ou área de membros.",
+        "category": "apps",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+        "price": "Sob Consulta",
+        "badge": "Mobile"
+    },
+    {
+        "id": 4,
+        "name": "Sistema de Gestão (ERP)",
+        "desc": "Software de gestão à medida. Controlo de stock, faturação, gestão de clientes (CRM) e relatórios financeiros.",
+        "category": "software",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+        "price": "Sob Consulta",
+        "badge": "Enterprise"
+    }
+]

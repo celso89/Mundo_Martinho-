@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Martinho | Engenharia de Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & VARIÁVEIS ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-main: #0f172a;       /* Slate 900 */
+            --bg-card: #1e293b;       /* Slate 800 */
+            --bg-input: #0f172a;
+            --primary: #2563eb;       /* Blue 600 */
+            --primary-hover: #1d4ed8;
+            --accent: #10b981;        /* Emerald 500 (WhatsApp) */
+            --text-main: #f8fafc;     /* Slate 50 */
+            --text-muted: #94a3b8;    /* Slate 400 */
+            --border: #334155;        /* Slate 700 */
+            --border-focus: #3b82f6;
+            --gold: #fbbf24;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.2s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-main); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* ===== LAYOUT & HEADER ===== */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; height: 72px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 32px; z-index: 1000;
+        }
+        
+        .logo img { height: 40px; object-fit: contain; }
+        
+        .nav-desktop { display: flex; gap: 32px; align-items: center; }
+        .nav-link { 
+            color: var(--text-muted); font-weight: 500; font-size: 0.95rem; 
+            text-decoration: none; cursor: pointer; transition: var(--transition);
+        }
+        .nav-link:hover, .nav-link.active { color: var(--text-main); }
+        
+        .header-actions { display: flex; gap: 20px; align-items: center; }
+        
+        .lang-toggle { display: flex; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border); overflow: hidden; }
+        .lang-btn { background: transparent; border: none; color: var(--text-muted); padding: 6px 14px; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
+        .lang-btn.active { background: var(--primary); color: white; }
+
+        .btn-quote-header { 
+            background: var(--primary); color: white; border: none; padding: 10px 20px; 
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; 
+            cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 8px;
+        }
+        .btn-quote-header:hover { background: var(--primary-hover); }
+        .badge-count { background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; }
+
+        /* ===== PÁGINAS & CONTAINER ===== */
+        .page { display: none; padding-top: 72px; min-height: calc(100vh - 72px); }
+        .page.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+        .section-title { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; margin-bottom: 32px; color: var(--text-main); }
+
+        /* ===== HERO SECTION ===== */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 60px 0; }
+        .hero-content { flex: 1; max-width: 600px; }
+        .hero h1 { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-main); }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; }
+        .btn-primary { 
+            background: var(--primary); color: white; border: none; padding: 14px 28px; 
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 1rem; 
+            cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+        
+        .hero-image { flex: 1; display: flex; justify-content: flex-end; }
+        .hero-image img { max-width: 100%; border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid var(--border); }
+
+        /* ===== CARROSSEL ===== */
+        .carousel-wrapper { margin: 40px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); position: relative; background: var(--bg-card); }
+        .carousel-track { display: flex; transition: transform 0.5s ease; }
+        .carousel-slide { min-width: 100%; display: flex; align-items: center; gap: 40px; padding: 40px; }
+        .carousel-slide img { width: 50%; height: 300px; object-fit: cover; border-radius: var(--radius-md); }
+        .carousel-text { flex: 1; }
+        .carousel-text h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 16px; }
+        .carousel-text p { color: var(--text-muted); font-size: 1.05rem; }
+        
+        .carousel-controls { position: absolute; bottom: 20px; right: 20px; display: flex; gap: 10px; }
+        .carousel-btn { background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .carousel-btn:hover { background: var(--primary); border-color: var(--primary); }
+
+        /* ===== CATEGORIAS E PRODUTOS ===== */
+        .categories { display: flex; gap: 12px; margin-bottom: 32px; overflow-x: auto; padding-bottom: 8px; }
+        .categories::-webkit-scrollbar { display: none; }
+        .cat-btn { 
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); 
+            padding: 8px 20px; border-radius: var(--radius-sm); font-weight: 500; font-size: 0.9rem; 
+            cursor: pointer; white-space: nowrap; transition: var(--transition); 
+        }
+        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        .card { 
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); 
+            padding: 24px; display: flex; flex-direction: column; transition: var(--transition); 
+        }
+        .card:hover { border-color: var(--text-muted); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        .card-badge { font-size: 0.75rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .card-img { width: 100%; height: 180px; border-radius: var(--radius-md); object-fit: cover; margin-bottom: 20px; }
+        .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+        .card-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; }
+        
+        .card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 20px; }
+        .card-price { font-weight: 700; font-size: 1.05rem; color: var(--text-main); }
+        .btn-add { 
+            background: transparent; border: 1px solid var(--primary); color: var(--primary); 
+            padding: 8px 16px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.85rem; 
+            cursor: pointer; transition: var(--transition); 
+        }
+        .btn-add:hover { background: var(--primary); color: white; }
+
+        /* ===== ORÇAMENTO (CART) ===== */
+        .quote-layout { display: grid; grid-template-columns: 1fr 400px; gap: 32px; align-items: start; }
+        .quote-items .card { padding: 16px; flex-direction: row; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .quote-items .card-img { width: 60px; height: 60px; margin-bottom: 0; }
+        .quote-items .card-title { font-size: 1rem; margin-bottom: 4px; }
+        .quote-items .card-price { font-size: 0.9rem; color: var(--primary); border: none; padding: 0; }
+        .btn-remove { background: transparent; border: none; color: #ef4444; cursor: pointer; padding: 8px; font-size: 1.1rem; transition: var(--transition); }
+        .btn-remove:hover { color: #dc2626; }
+
+        .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; position: sticky; top: 100px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+        .form-group input, .form-group textarea { 
+            width: 100%; padding: 12px; background: var(--bg-main); border: 1px solid var(--border); 
+            border-radius: var(--radius-sm); color: var(--text-main); font-family: var(--font-body); 
+            font-size: 0.95rem; transition: var(--transition); 
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+
+        .bonus-box { background: rgba(251, 191, 36, 0.1); border: 1px solid var(--gold); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; display: none; }
+        .bonus-box h4 { color: var(--gold); font-size: 0.95rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .bonus-box p { font-size: 0.85rem; color: var(--text-muted); }
+
+        .note-box { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 24px; padding-left: 12px; border-left: 2px solid var(--border); }
+
+        /* Botão Seguro Anti-Troll */
+        .secure-lock-box { 
+            background: var(--bg-main); border: 1px dashed var(--border); border-radius: var(--radius-md); 
+            padding: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem; 
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+        }
+        .btn-whatsapp { 
+            width: 100%; background: var(--accent); color: white; border: none; padding: 16px; 
+            border-radius: var(--radius-sm); font-weight: 700; font-size: 1rem; cursor: pointer; 
+            transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 10px; 
+        }
+        .btn-whatsapp:hover { background: #059669; }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav { 
+            display: none; position: fixed; bottom: 0; left: 0; right: 0; 
+            background: var(--bg-card); border-top: 1px solid var(--border); 
+            justify-content: space-around; padding: 10px 0; z-index: 1000; 
+        }
+        .mobile-nav-item { 
+            background: none; border: none; color: var(--text-muted); 
+            display: flex; flex-direction: column; align-items: center; gap: 4px; 
+            font-size: 0.75rem; font-weight: 500; cursor: pointer; 
+        }
+        .mobile-nav-item.active { color: var(--primary); }
+        .mobile-nav-item i { font-size: 1.3rem; }
+
+        /* ===== TOAST ===== */
+        .toast { 
+            position: fixed; bottom: 80px; right: 20px; background: var(--bg-card); 
+            border: 1px solid var(--border); color: var(--text-main); padding: 14px 20px; 
+            border-radius: var(--radius-sm); box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            display: flex; align-items: center; gap: 12px; font-size: 0.9rem; z-index: 2000; 
+            animation: slideUp 0.3s ease; 
+        }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .quote-layout { grid-template-columns: 1fr; }
+            .carousel-slide { flex-direction: column; padding: 20px; }
+            .carousel-slide img { width: 100%; height: 200px; }
+            .carousel-text h3 { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 0 20px; height: 64px; }
+            .nav-desktop { display: none; }
+            .mobile-nav { display: flex; }
+            .page { padding-top: 64px; padding-bottom: 70px; }
+            .container { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img id="siteLogo" src="" alt="Logo">
+        </div>
+        
+        <nav class="nav-desktop">
+            <a class="nav-link active" onclick="showPage('home')" id="navHome">Início</a>
+            <a class="nav-link" onclick="showPage('home'); document.getElementById('servicesSection').scrollIntoView({behavior: 'smooth'})" id="navServices">Soluções</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="lang-toggle" id="langToggle">
+                <button class="lang-btn active" data-lang="pt">PT</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="btn-quote-header" onclick="showPage('quote')">
+                <span id="navQuote">Orçamento</span>
+                <span class="badge-count" id="quoteCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- PÁGINA INICIAL -->
+    <section class="page active" id="pageHome">
+        <div class="container">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 id="heroTitle">Carregando...</h1>
+                    <p id="heroDesc">...</p>
+                    <button class="btn-primary" onclick="document.getElementById('servicesSection').scrollIntoView({behavior: 'smooth'})">
+                        <span id="btnExplore">...</span> <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Dashboard Corporativo">
+                </div>
+            </div>
+
+            <!-- Carrossel -->
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack"></div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Serviços -->
+            <h2 class="section-title" id="servicesSection">...</h2>
+            <div class="categories" id="categoryNav"></div>
+            <div class="grid-services" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- PÁGINA DE ORÇAMENTO -->
+    <section class="page" id="pageQuote">
+        <div class="container">
+            <h2 class="section-title" id="quoteTitle">...</h2>
+            
+            <div class="quote-layout">
+                <div class="quote-items" id="quoteItemsContainer"></div>
+                
+                <div class="summary-card">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                        <i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 8px;"></i> 
+                        <span id="formTitle">...</span>
+                    </h3>
+                    
+                    <div class="bonus-box" id="bonusAlert">
+                        <h4><i class="fas fa-gift"></i> <span id="bonusTitleText">...</span></h4>
+                        <p id="bonusDescText">...</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="labelName">...</label>
+                        <input type="text" id="customerName" placeholder="..." oninput="validateForm()">
+                    </div>
+                    <div class="form-group">
+                        <label id="labelPhone">...</label>
+                        <input type="tel" id="customerPhone" placeholder="..." oninput="validateForm()">
+                    </div>
+                    <div class="form-group">
+                        <label id="labelDetails">...</label>
+                        <textarea id="customerDetails" rows="3" placeholder="..."></textarea>
+                    </div>
+                    
+                    <div class="note-box" id="noteDelivery">...</div>
+
+                    <div id="whatsappBtnContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+        <button class="mobile-nav-item active" onclick="showPage('home')" id="mobNavHome">
+            <i class="fas fa-home"></i> <span id="mobHomeText">Início</span>
+        </button>
+        <button class="mobile-nav-item" onclick="showPage('home'); document.getElementById('servicesSection').scrollIntoView({behavior: 'smooth'})" id="mobNavServices">
+            <i class="fas fa-th-large"></i> <span id="mobServicesText">Soluções</span>
+        </button>
+        <button class="mobile-nav-item" onclick="showPage('quote')" id="mobNavQuote" style="position:relative;">
+            <i class="fas fa-file-invoice"></i> <span id="mobQuoteText">Orçamento</span>
+            <span class="badge-count" id="mobBadge" style="position:absolute; top:-5px; right:0; font-size:0.6rem; padding:2px 6px;">0</span>
+        </button>
+    </nav>
+
+    <script>
+        let APP_CONFIG = {};
+        let allServices = [];
+        let quoteList = [];
+        let currentCategory = "all";
+        let currentLang = "pt";
+        let carouselIndex = 0;
+        let slides = [];
+
+        // ===== INICIALIZAÇÃO =====
+        document.addEventListener('DOMContentLoaded', () => {
+            Promise.all([
+                fetch('config.json').then(res => res.json()),
+                fetch('services.json').then(res => res.json())
+            ]).then(([config, services]) => {
+                APP_CONFIG = config;
+                allServices = services;
+                slides = config.slides;
+
+                document.getElementById('siteLogo').src = APP_CONFIG.logoUrl;
+
+                changeLanguage('pt'); 
+                renderCarousel();
+                validateForm(); 
+            }).catch(err => console.error("Erro ao carregar dados:", err));
+        });
+
+        // ===== TRADUÇÕES =====
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const dict = APP_CONFIG.translations[lang];
+            
+            document.getElementById('heroTitle').innerText = dict.heroTitle;
+            document.getElementById('heroDesc').innerText = dict.heroDesc;
+            document.getElementById('btnExplore').innerText = dict.btnExplore;
+            document.getElementById('servicesSection').innerText = dict.sectionServices;
+            document.getElementById('navHome').innerText = dict.navHome;
+            document.getElementById('navServices').innerText = dict.navServices;
+            document.getElementById('navQuote').innerText = dict.navQuote;
+            document.getElementById('mobHomeText').innerText = dict.navHome;
+            document.getElementById('mobServicesText').innerText = dict.navServices;
+            document.getElementById('mobQuoteText').innerText = dict.navQuote;
+            
+            document.getElementById('quoteTitle').innerText = dict.quoteTitle;
+            document.getElementById('formTitle').innerText = dict.formTitle;
+            document.getElementById('labelName').innerText = dict.formName;
+            document.getElementById('customerName').placeholder = dict.formNamePlace;
+            document.getElementById('labelPhone').innerText = dict.formPhone;
+            document.getElementById('customerPhone').placeholder = dict.formPhonePlace;
+            document.getElementById('labelDetails').innerText = dict.formDetails;
+            document.getElementById('customerDetails').placeholder = dict.formDetailsPlace;
+            document.getElementById('noteDelivery').innerText = dict.noteDelivery;
+            document.getElementById('bonusTitleText').innerText = dict.bonusTitle;
+            document.getElementById('bonusDescText').innerText = dict.bonusDesc;
+
+            renderCategories();
+            renderServices();
+            if(document.getElementById('pageQuote').classList.contains('active')) {
+                renderQuote();
+                validateForm();
+            }
+        }
+
+        document.getElementById('langToggle').addEventListener('click', (e) => {
+            if(e.target.tagName === 'BUTTON') {
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                changeLanguage(e.target.dataset.lang);
+            }
+        });
+
+        // ===== RENDERIZAÇÃO =====
+        function renderCategories() {
+            const nav = document.getElementById('categoryNav');
+            const dict = APP_CONFIG.translations[currentLang];
+            
+            nav.innerHTML = dict.categories.map(c => `
+                <button class="cat-btn ${currentCategory === c.id ? 'active' : ''}" onclick="filterCategory('${c.id}')">
+                    ${c.name}
+                </button>
+            `).join('');
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            renderCategories();
+            renderServices();
+        }
+
+        function renderServices() {
+            const grid = document.getElementById('productsGrid');
+            let list = allServices;
+            if (currentCategory !== 'all') list = list.filter(p => p.category === currentCategory);
+
+            if (list.length === 0) {
+                grid.innerHTML = `<p style="color: var(--text-muted); grid-column: 1/-1; padding: 20px 0;">Nenhum serviço encontrado.</p>`;
+                return;
+            }
+
+            grid.innerHTML = list.map(p => `
+                <div class="card">
+                    <div class="card-badge">${p.badge}</div>
+                    <img src="${p.image}" class="card-img" alt="${p.name}" loading="lazy">
+                    <h3 class="card-title">${p.name}</h3>
+                    <p class="card-desc">${p.desc}</p>
+                    <div class="card-footer">
+                        <span class="card-price">${p.price}</span>
+                        <button class="btn-add" onclick="addToQuote(${p.id})">
+                            ${APP_CONFIG.translations[currentLang].btnAddQuote}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ===== CARROSSEL =====
+        function renderCarousel() {
+            const track = document.getElementById('carouselTrack');
+            track.innerHTML = slides.map(s => `
+                <div class="carousel-slide">
+                    <img src="${s.image}" alt="${s.title}">
+                    <div class="carousel-text">
+                        <h3>${s.title}</h3>
+                        <p>${s.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateCarousel(index) {
+            carouselIndex = index;
+            document.getElementById('carouselTrack').style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('carouselPrev').addEventListener('click', () => updateCarousel((carouselIndex - 1 + slides.length) % slides.length));
+        document.getElementById('carouselNext').addEventListener('click', () => updateCarousel((carouselIndex + 1) % slides.length));
+        setInterval(() => updateCarousel((carouselIndex + 1) % slides.length), 6000);
+
+        // ===== ORÇAMENTO =====
+        function showToast(msg) {
+            const t = document.createElement('div');
+            t.className = 'toast';
+            t.innerHTML = `<i class="fas fa-info-circle" style="color: var(--primary)"></i> ${msg}`;
+            document.body.appendChild(t);
+            setTimeout(() => { t.remove(); }, 3000);
+        }
+
+        function addToQuote(id) {
+            const p = allServices.find(x => x.id === id);
+            if (!quoteList.find(x => x.id === id)) {
+                quoteList.push(p);
+                updateBadges();
+                showToast(`"${p.name}" ${APP_CONFIG.translations[currentLang].toastAdded}`);
+                validateForm(); 
+            } else {
+                showToast(APP_CONFIG.translations[currentLang].toastExists);
+            }
+        }
+
+        function removeFromQuote(id) {
+            quoteList = quoteList.filter(x => x.id !== id);
+            updateBadges();
+            renderQuote();
+            validateForm(); 
+        }
+
+        function updateBadges() {
+            document.getElementById('quoteCount').innerText = quoteList.length;
+            document.getElementById('mobBadge').innerText = quoteList.length;
+        }
+
+        function renderQuote() {
+            const container = document.getElementById('quoteItemsContainer');
+            const dict = APP_CONFIG.translations[currentLang];
+            
+            const bonusAlert = document.getElementById('bonusAlert');
+            if (quoteList.length >= APP_CONFIG.bonusMinServices) {
+                bonusAlert.style.display = 'block';
+            } else {
+                bonusAlert.style.display = 'none';
+            }
+
+            if (quoteList.length === 0) {
+                container.innerHTML = `<p style="color: var(--text-muted); text-align: center; padding: 40px 0;">${dict.quoteEmpty}</p>`;
+                return;
+            }
+            
+            container.innerHTML = quoteList.map(item => `
+                <div class="card">
+                    <img src="${item.image}" class="card-img" alt="${item.name}">
+                    <div style="flex:1;">
+                        <div class="card-title">${item.name}</div>
+                        <div class="card-price">${item.price}</div>
+                    </div>
+                    <button class="btn-remove" onclick="removeFromQuote(${item.id})" title="Remover">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // ===== VALIDAÇÃO SEGURA =====
+        function validateForm() {
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const container = document.getElementById('whatsappBtnContainer');
+            const dict = APP_CONFIG.translations[currentLang];
+
+            const hasService = quoteList.length > 0;
+            const hasName = name.length > 2;
+            const hasPhone = phone.length > 5;
+
+            if (hasService && hasName && hasPhone) {
+                if(!document.getElementById('finishQuoteBtn')) {
+                    container.innerHTML = `
+                        <button class="btn-whatsapp" id="finishQuoteBtn">
+                            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> <span>${dict.btnSendWhats}</span>
+                        </button>
+                    `;
+                    document.getElementById('finishQuoteBtn').addEventListener('click', sendWhatsApp);
+                }
+            } else {
+                container.innerHTML = `
+                    <div class="secure-lock-box">
+                        <i class="fas fa-lock"></i> 
+                        <span>${dict.secureWait}</span>
+                    </div>
+                `;
+            }
+        }
+
+        // ===== ENVIAR WHATSAPP =====
+        function sendWhatsApp() {
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const details = document.getElementById('customerDetails').value.trim();
+
+            let msg = `*PROPOSTA TÉCNICA - MUNDO MARTINHO*\n\n`;
+            msg += `*Cliente:* ${name}\n`;
+            msg += `*Contacto:* ${phone}\n`;
+            if (details) msg += `*Briefing:* ${details}\n\n`;
+            
+            msg += `*Soluções Selecionadas:*\n`;
+            quoteList.forEach(item => {
+                msg += `- ${item.name} (${item.price})\n`;
+            });
+
+            if (quoteList.length >= APP_CONFIG.bonusMinServices) {
+                msg += `\n*OFERTA:* Solicito a ativação do módulo ERP (Oferta de 2+ serviços).\n`;
+            }
+            
+            msg += `\n*Nota:* Aguardo validação técnica e cronograma.`;
+
+            const url = `https://wa.me/${APP_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+            
+            // Reset
+            quoteList = [];
+            updateBadges();
+            document.getElementById('customerName').value = '';
+            document.getElementById('customerPhone').value = '';
+            document.getElementById('customerDetails').value = '';
+            showPage('home');
+        }
+
+        // ===== NAVEGAÇÃO =====
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            
+            if (pageId === 'home') {
+                document.getElementById('pageHome').classList.add('active');
+                document.getElementById('navHome').classList.add('active');
+                document.getElementById('mobNavHome').classList.add('active');
+            } else if (pageId === 'quote') {
+                document.getElementById('pageQuote').classList.add('active');
+                document.getElementById('mobNavQuote').classList.add('active');
+                renderQuote();
+                validateForm(); 
+            }
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
