@@ -1,0 +1,372 @@
+{
+ "whatsapp": "244958515434",
+ "logoUrl": "logo.webp",
+ "bonusMinServices": 2,
+ "slides": [
+  {
+   "image": "1.webp",
+   "pt": {
+    "title": "Criação de Sites Profissionais",
+    "desc": "Sites modernos, rápidos e totalmente personalizados, prontos para converter visitantes em clientes."
+   },
+   "en": {
+    "title": "Professional Website Creation",
+    "desc": "Modern, fast and fully customised websites built to turn visitors into customers."
+   }
+  },
+  {
+   "image": "2.webp",
+   "pt": {
+    "title": "WhatsApp Bot 24h",
+    "desc": "Atendimento automático, respostas rápidas e pedidos a qualquer hora, sem perder nenhum cliente."
+   },
+   "en": {
+    "title": "24h WhatsApp Bot",
+    "desc": "Automatic support, instant answers and orders at any hour, without losing a single customer."
+   }
+  }
+ ],
+ "translations": {
+  "pt": {
+   "navHome": "Serviços",
+   "navAnuncios": "Anúncios",
+   "navQuote": "Orçamento",
+   "heroTitle": "Engenharia de Software de Elite",
+   "heroDesc": "Desenvolvemos websites profissionais, automação de WhatsApp, aplicações móveis e sistemas de gestão de alto padrão para empresas exigentes.",
+   "btnExplore": "Explorar Soluções",
+   "sectionServices": "Nossas Soluções Tecnológicas",
+   "sectionAnuncios": "Mural de Anúncios & Eventos",
+   "btnAddQuote": "Adicionar",
+   "quoteTitle": "Solicitar Proposta Técnica",
+   "quoteEmpty": "Nenhum serviço selecionado. Escolha uma solução para iniciar.",
+   "formTitle": "Qualificação do Cliente",
+   "formName": "Nome Completo / Empresa",
+   "formNamePlace": "Ex: Tech Angola Lda",
+   "formPhone": "WhatsApp Corporativo",
+   "formPhonePlace": "Ex: +244 9XX XXX XXX",
+   "formDetails": "Resumo do Projeto",
+   "formDetailsPlace": "Descreva brevemente o seu objetivo...",
+   "btnSendWhats": "Validar e Enviar Proposta",
+   "noteDelivery": "* Os prazos de entrega são definidos após reunião de briefing. Projetos web iniciam em 25.000 Kz (inclui subdomínio).",
+   "toastAdded": "adicionado à proposta.",
+   "toastExists": "Este serviço já está selecionado.",
+   "secureWait": "Preencha nome, telemóvel e adicione um serviço para enviar.",
+   "secureReady": "Dados validados. Pode enviar o pedido com segurança.",
+   "bonusTitle": "Oferta Especial Desbloqueada",
+   "bonusDesc": "Ao selecionar mais de um serviço, ofertamos a implementação de um módulo ERP base para a sua empresa.",
+   "categories": [
+    {
+     "id": "all",
+     "name": "Todas",
+     "icon": "fa-th-large"
+    },
+    {
+     "id": "websites",
+     "name": "Websites",
+     "icon": "fa-laptop-code"
+    },
+    {
+     "id": "bots",
+     "name": "Automação",
+     "icon": "fa-robot"
+    },
+    {
+     "id": "apps",
+     "name": "Apps Móveis",
+     "icon": "fa-mobile-alt"
+    },
+    {
+     "id": "software",
+     "name": "Sistemas ERP",
+     "icon": "fa-server"
+    }
+   ],
+   "heroBadge": "Angola · Soluções digitais à medida",
+   "btnWhats": "Falar no WhatsApp",
+   "statProjects": "Projetos Entregues",
+   "statSecurity": "Segurança e Confiabilidade",
+   "statSupport": "Suporte Técnico Dedicado",
+   "sectionSub": "Soluções robustas para escalar o seu negócio.",
+   "anunciosSub": "Novidades, eventos e ofertas especiais.",
+   "updated": "Atualizado recentemente",
+   "popular": "Mais procurado",
+   "from": "Investimento estimado",
+   "fromNote": "a partir de",
+   "onRequest": "+ serviços sob consulta",
+   "rewardsTitle": "Quanto mais escolhe, mais ganha",
+   "rewardsNext": "Adicione mais {n} serviço(s) para desbloquear:",
+   "rewardsAll": "Todos os prémios desbloqueados!",
+   "stepsTitle": "Como funciona",
+   "faqTitle": "Perguntas frequentes",
+   "testiTitle": "O que dizem os clientes",
+   "steps": [
+    [
+     "Escolha",
+     "Selecione as soluções que precisa."
+    ],
+    [
+     "Envie",
+     "Envie a proposta por WhatsApp em segundos."
+    ],
+    [
+     "Briefing",
+     "Alinhamos objetivos, prazos e orçamento."
+    ],
+    [
+     "Entrega",
+     "Desenvolvemos, testamos e entregamos com suporte."
+    ]
+   ],
+   "faq": [
+    [
+     "Quanto custa um website?",
+     "Projetos web iniciam em 25.000 Kz, com subdomínio incluído. O valor final depende do briefing."
+    ],
+    [
+     "Qual o prazo de entrega?",
+     "Os prazos são definidos após a reunião de briefing, conforme a complexidade do projeto."
+    ],
+    [
+     "Posso pedir mais do que um serviço?",
+     "Sim. Ao selecionar 2 ou mais serviços desbloqueia prémios, como o módulo ERP base."
+    ],
+    [
+     "Como é feito o pagamento e o suporte?",
+     "Combinamos tudo no briefing, por WhatsApp, e acompanhamos o seu projeto após a entrega."
+    ]
+   ],
+   "refTitle": "Indique e ganhe",
+   "refDesc": "Partilhe o seu código: quem indica e quem é indicado recebe um benefício exclusivo.",
+   "refCopy": "Partilhar link",
+   "refCopied": "Link copiado!",
+   "phoneErr": "Introduza um número válido (ex: 9XX XXX XXX).",
+   "nameErr": "Indique o seu nome.",
+   "total": "Resumo",
+   "sent": "Pedido preparado. Continue a conversa no WhatsApp!",
+   "empty": "Nenhum serviço nesta categoria.",
+   "loadErr": "Não foi possível carregar. Verifique a ligação e tente novamente.",
+   "retry": "Tentar novamente",
+   "footer": "Engenharia de software · Angola",
+   "install": "Instalar app",
+   "navShowcase": "Projetos",
+   "showTitle": "Projetos & Feedbacks",
+   "showSub": "Resultados reais e a opinião de quem já trabalhou connosco.",
+   "showEmpty": "Os primeiros projetos e feedbacks serão publicados aqui em breve.",
+   "projTitle": "Projetos entregues",
+   "projSub": "Alguns dos trabalhos que já realizámos.",
+   "fbTitle": "O que dizem os clientes",
+   "fbSub": "A satisfação de quem confiou no nosso trabalho.",
+   "kpiProj": "Projetos publicados",
+   "kpiFb": "Feedbacks de clientes",
+   "kpiAvg": "Avaliação média",
+   "viewProject": "Ver projeto",
+   "viewChat": "Ver conversa",
+   "seeAll": "Ver todos os projetos e feedbacks",
+   "ctaTitle": "Pronto para começar o seu projeto?",
+   "ctaDesc": "Escolha os serviços, preencha os seus dados e receba uma proposta personalizada.",
+   "shots": "Capturas:",
+   "btnQuote": "Pedir orçamento",
+   "btnShare": "Partilhar",
+   "shareTitle": "Partilhar o Mundo Martinho",
+   "shareDesc": "Digitalize o QR Code ou partilhe o link com quem precisa de um site, app ou automação.",
+   "shareQR": "Aponte a câmara para abrir o site",
+   "shareDl": "Descarregar QR Code",
+   "shareCopied": "Link copiado!",
+   "shareIg": "Link copiado! Cole na bio, story ou mensagem.",
+   "shareMore": "Mais opções",
+   "shareText": "Conheça a Mundo Martinho: websites, automação de WhatsApp, apps e sistemas de gestão em Angola."
+  },
+  "en": {
+   "navHome": "Services",
+   "navAnuncios": "Announcements",
+   "navQuote": "Quote",
+   "heroTitle": "Elite Software Engineering",
+   "heroDesc": "We develop professional websites, WhatsApp automation, mobile apps, and high-end management systems for demanding companies.",
+   "btnExplore": "Explore Solutions",
+   "sectionServices": "Our Tech Solutions",
+   "sectionAnuncios": "Announcements & Events Board",
+   "btnAddQuote": "Add",
+   "quoteTitle": "Request Technical Proposal",
+   "quoteEmpty": "No services selected. Choose a solution to start.",
+   "formTitle": "Client Qualification",
+   "formName": "Full Name / Company",
+   "formNamePlace": "Ex: Tech Corp",
+   "formPhone": "Corporate WhatsApp",
+   "formPhonePlace": "Ex: +244 9XX XXX XXX",
+   "formDetails": "Project Summary",
+   "formDetailsPlace": "Briefly describe your goal...",
+   "btnSendWhats": "Validate & Send Proposal",
+   "noteDelivery": "* Delivery times are defined after a briefing meeting. Web projects start at 25,000 Kz (subdomain included).",
+   "toastAdded": "added to proposal.",
+   "toastExists": "This service is already selected.",
+   "secureWait": "Enter your name, phone and add a service to send.",
+   "secureReady": "Data validated. You can send securely.",
+   "bonusTitle": "Special Offer Unlocked",
+   "bonusDesc": "By selecting more than one service, we offer the implementation of a basic ERP module for your company.",
+   "categories": [
+    {
+     "id": "all",
+     "name": "All",
+     "icon": "fa-th-large"
+    },
+    {
+     "id": "websites",
+     "name": "Websites",
+     "icon": "fa-laptop-code"
+    },
+    {
+     "id": "bots",
+     "name": "Automation",
+     "icon": "fa-robot"
+    },
+    {
+     "id": "apps",
+     "name": "Mobile Apps",
+     "icon": "fa-mobile-alt"
+    },
+    {
+     "id": "software",
+     "name": "ERP Systems",
+     "icon": "fa-server"
+    }
+   ],
+   "heroBadge": "Angola · Tailor-made digital solutions",
+   "btnWhats": "Chat on WhatsApp",
+   "statProjects": "Projects Delivered",
+   "statSecurity": "Security & Reliability",
+   "statSupport": "Dedicated Tech Support",
+   "sectionSub": "Robust solutions to scale your business.",
+   "anunciosSub": "News, events and special offers.",
+   "updated": "Recently updated",
+   "popular": "Most popular",
+   "from": "Estimated investment",
+   "fromNote": "from",
+   "onRequest": "+ services on request",
+   "rewardsTitle": "The more you choose, the more you get",
+   "rewardsNext": "Add {n} more service(s) to unlock:",
+   "rewardsAll": "All rewards unlocked!",
+   "stepsTitle": "How it works",
+   "faqTitle": "Frequently asked questions",
+   "testiTitle": "What clients say",
+   "steps": [
+    [
+     "Choose",
+     "Pick the solutions you need."
+    ],
+    [
+     "Send",
+     "Send your proposal on WhatsApp in seconds."
+    ],
+    [
+     "Briefing",
+     "We align goals, timeline and budget."
+    ],
+    [
+     "Delivery",
+     "We build, test and deliver with support."
+    ]
+   ],
+   "faq": [
+    [
+     "How much does a website cost?",
+     "Web projects start at 25,000 Kz with a subdomain included. The final price depends on the briefing."
+    ],
+    [
+     "What is the delivery time?",
+     "Timelines are set after the briefing meeting, based on project complexity."
+    ],
+    [
+     "Can I order more than one service?",
+     "Yes. Selecting 2 or more services unlocks rewards such as the basic ERP module."
+    ],
+    [
+     "How do payment and support work?",
+     "We agree everything during the briefing on WhatsApp and support you after delivery."
+    ]
+   ],
+   "refTitle": "Refer and earn",
+   "refDesc": "Share your code: both the referrer and the new client get an exclusive benefit.",
+   "refCopy": "Share link",
+   "refCopied": "Link copied!",
+   "phoneErr": "Enter a valid number (e.g. 9XX XXX XXX).",
+   "nameErr": "Please enter your name.",
+   "total": "Summary",
+   "sent": "Request ready. Continue the chat on WhatsApp!",
+   "empty": "No services in this category.",
+   "loadErr": "Could not load. Check your connection and try again.",
+   "retry": "Retry",
+   "footer": "Software engineering · Angola",
+   "install": "Install app",
+   "navShowcase": "Projects",
+   "showTitle": "Projects & Feedback",
+   "showSub": "Real results and the opinions of those who have worked with us.",
+   "showEmpty": "The first projects and feedback will be published here soon.",
+   "projTitle": "Delivered projects",
+   "projSub": "Some of the work we have delivered.",
+   "fbTitle": "What clients say",
+   "fbSub": "The satisfaction of those who trusted our work.",
+   "kpiProj": "Published projects",
+   "kpiFb": "Client feedback",
+   "kpiAvg": "Average rating",
+   "viewProject": "View project",
+   "viewChat": "View conversation",
+   "seeAll": "See all projects and feedback",
+   "ctaTitle": "Ready to start your project?",
+   "ctaDesc": "Choose your services, fill in your details and get a tailored proposal.",
+   "shots": "Screenshots:",
+   "btnQuote": "Request a quote",
+   "btnShare": "Share",
+   "shareTitle": "Share Mundo Martinho",
+   "shareDesc": "Scan the QR code or share the link with anyone who needs a website, app or automation.",
+   "shareQR": "Point your camera to open the site",
+   "shareDl": "Download QR Code",
+   "shareCopied": "Link copied!",
+   "shareIg": "Link copied! Paste it in your bio, story or message.",
+   "shareMore": "More options",
+   "shareText": "Meet Mundo Martinho: websites, WhatsApp automation, apps and management systems in Angola."
+  }
+ },
+ "siteUrl": "https://mundo-martinho.onrender.com",
+ "hours": {
+  "pt": "Seg–Sáb · 8h–19h (Luanda)",
+  "en": "Mon–Sat · 8am–7pm (Luanda)"
+ },
+ "social": {
+  "instagram": "",
+  "facebook": "",
+  "tiktok": ""
+ },
+ "stats": [
+  {
+   "n": 100,
+   "p": "",
+   "s": "%",
+   "k": "statSecurity",
+   "i": "shield"
+  },
+  {
+   "n": 24,
+   "p": "",
+   "s": "/7",
+   "k": "statSupport",
+   "i": "headset"
+  }
+ ],
+ "rewards": [
+  {
+   "min": 1,
+   "pt": "Consultoria e briefing inicial sem custos",
+   "en": "Free initial consultation and briefing"
+  },
+  {
+   "min": 2,
+   "pt": "Módulo ERP base oferecido",
+   "en": "Free basic ERP module"
+  },
+  {
+   "min": 3,
+   "pt": "Suporte prioritário no 1.º mês",
+   "en": "Priority support for the first month"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+[
+ {
+  "title": "FransMat Burger — Site de encomendas",
+  "title_en": "FransMat Burger — Online ordering website",
+  "category": "websites",
+  "client": "FransMat Burger",
+  "description": "Site de encomendas de hambúrgueres, cachorros quentes e combos, com menu e preços, carrinho e formulário de encomenda.",
+  "description_en": "Online ordering website for burgers, hot dogs and combos, with menu and prices, cart and order form.",
+  "image": "fransmat-capa.webp",
+  "images": [
+   "fransmat-1.webp",
+   "fransmat-2.webp"
+  ],
+  "tags": [
+   "Website",
+   "Encomendas online",
+   "Menu digital"
+  ]
+ },
+ {
+  "title": "Nicolau Assistance — Sistema de gestão",
+  "title_en": "Nicolau Assistance — Management system",
+  "category": "software",
+  "client": "Nicolau Assistance",
+  "description": "Sistema de gestão para assistência técnica: ordens de serviço com PDF, clientes, stock de peças, finanças, relatórios, contas de funcionários e backup.",
+  "description_en": "Management system for a repair shop: service orders with PDF, customers, parts stock, finance, reports, staff accounts and backup.",
+  "image": "nicolau-capa.webp",
+  "images": [
+   "nicolau-1.webp",
+   "nicolau-2.webp"
+  ],
+  "tags": [
+   "Gestão financeira",
+   "Ordens de serviço",
+   "Stock",
+   "Backup"
+  ]
+ }
+]
